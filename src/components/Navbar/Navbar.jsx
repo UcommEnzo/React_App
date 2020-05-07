@@ -7,7 +7,7 @@ function Navbar() {
             <a className={c.item}>Profile</a>
         </div>
         <div>
-            <a className={c.item}>Messages</a>
+            <a className={`${c.item} ${c.rare}`}>Messages</a>
         </div>
         <div>
             <a className={c.item}>News</a>
