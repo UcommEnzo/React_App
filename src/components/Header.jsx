@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.css';
+import c from './Header.module.css';
 
 function Header() {
-    return <header className='header'>
+    return <header className={c.header}>
         <img src='https://pngimg.com/uploads/donut/donut_PNG98.png'/>
     </header>
 

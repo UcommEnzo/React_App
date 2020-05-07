@@ -1,22 +1,22 @@
 import React from 'react';
-import './Navbar.css';
+import c from './Navbar.module.css';
 
 function Navbar() {
-    return <nav className='nav'>
+    return <nav className={c.nav}>
         <div>
-            <a>Profile</a>
+            <a className={c.item}>Profile</a>
         </div>
         <div>
-            <a>Messages</a>
+            <a className={c.item}>Messages</a>
         </div>
         <div>
-            <a>News</a>
+            <a className={c.item}>News</a>
         </div>
         <div>
-            <a>Music</a>
+            <a className={c.item}>Music</a>
         </div>
         <div>
-            <a>Settings</a>
+            <a className={c.item}>Settings</a>
         </div>
     </nav>
 
