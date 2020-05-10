@@ -3,20 +3,20 @@ import c from './Navbar.module.css';
 
 function Navbar() {
     return <nav className={c.nav}>
-        <div>
-            <a className={c.item}>Profile</a>
+        <div className={c.item}>
+            <a href="/profile">Profile</a>
         </div>
-        <div>
-            <a className={`${c.item} ${c.rare}`}>Messages</a>
+        <div className={`${c.item} ${c.rare}`}>
+            <a href="/dialogs">Messages</a>
         </div>
-        <div>
-            <a className={c.item}>News</a>
+        <div className={c.item}>
+            <a>News</a>
         </div>
-        <div>
-            <a className={c.item}>Music</a>
+        <div className={c.item}>
+            <a>Music</a>
         </div>
-        <div>
-            <a className={c.item}>Settings</a>
+        <div className={c.item}>
+            <a>Settings</a>
         </div>
     </nav>
 

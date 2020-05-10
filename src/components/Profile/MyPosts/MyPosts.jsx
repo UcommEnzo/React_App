@@ -10,10 +10,8 @@ function MyPosts() {
             <button>Publish</button>
         </div>
         <div className={c.posts}>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post message='Hi, how are you?' likesCount='12'/>
+            <Post message='Hi, im fine, thank you.' likesCount='15'/>
         </div>
     </div>
 }
