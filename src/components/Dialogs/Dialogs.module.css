@@ -11,8 +11,13 @@
     color: orangered;
 }
 
-.item {
+.item a{
+    color: black;
+    text-decoration: none;
+}
 
+.item a.active {
+    color: orangered;
 }
 
 .message {

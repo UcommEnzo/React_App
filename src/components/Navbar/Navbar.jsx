@@ -7,7 +7,7 @@ function Navbar() {
         <div className={c.item}>
             <NavLink to="/Profile" activeClassName={c.activeLink}>Profile</NavLink>
         </div>
-        <div className={`${c.item} ${c.active}`}>
+        <div className={c.item}>
             <NavLink to="/Dialogs" activeClassName={c.activeLink}>Messages</NavLink>
         </div>
         <div className={c.item}>
