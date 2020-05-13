@@ -3,11 +3,15 @@ import c from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 function MyPosts() {
-    return <div>
-        My posts
+    return <div  className={c.postsBlock}>
+        <h3>My posts</h3>
         <div>
-            <textarea></textarea>
-            <button>Publish</button>
+            <div>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button>Send</button>
+            </div>
         </div>
         <div className={c.posts}>
             <Post message='Hi, how are you?' likesCount='12'/>

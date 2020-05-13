@@ -11,15 +11,6 @@
     color: orangered;
 }
 
-.item a{
-    color: black;
-    text-decoration: none;
-}
-
-.item a.active {
-    color: orangered;
-}
-
 .message {
 padding: 10px;
 }
