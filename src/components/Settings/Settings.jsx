@@ -2,7 +2,7 @@ import React from 'react';
 import c from './Settings.module.css';
 
 function Settings() {
-    return <div>
+    return <div className={c.settings}>
         Settings
     </div>
 }

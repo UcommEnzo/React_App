@@ -2,7 +2,8 @@
     grid-area: n;
     background: rgb(238, 246, 255);
     background: linear-gradient(0deg, rgba(238, 246, 255, 1) 0%, rgba(45, 144, 253, 1) 60%);
-    padding: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .item a{

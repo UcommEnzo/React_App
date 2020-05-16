@@ -2,7 +2,7 @@ import React from 'react';
 import c from './News.module.css';
 
 function News() {
-    return <div>
+    return <div className={c.news}>
         News
     </div>
 }

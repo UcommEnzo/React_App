@@ -4,7 +4,8 @@
 }
 
 .dialogsItem {
-    padding: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .dialogsItem .active{
@@ -12,5 +13,6 @@
 }
 
 .message {
-padding: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
