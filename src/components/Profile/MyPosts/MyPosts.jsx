@@ -1,7 +1,6 @@
 import React from 'react';
 import c from './MyPosts.module.css';
 import Post from "./Post/Post";
-import DialogsItem from "../../Dialogs/DialogsItem/DialogsItem";
 
 function MyPosts(props) {
 
