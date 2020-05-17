@@ -1,13 +1,9 @@
 import React from 'react';
 import c from './MyPosts.module.css';
 import Post from "./Post/Post";
+import {posts} from "./../Profile";
 
 function MyPosts(props) {
-
-    let posts = [
-        {id: 1, message: 'Hi, how are you?', likesCount: 12},
-        {id: 2, message: 'Hi, im fine, thank you.', likesCount: 15}
-    ]
 
     let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
