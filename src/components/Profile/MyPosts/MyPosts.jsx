@@ -1,11 +1,10 @@
 import React from 'react';
 import c from './MyPosts.module.css';
 import Post from "./Post/Post";
-import {posts} from "./../Profile";
 
 function MyPosts(props) {
 
-    let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+    let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
     return <div className={c.postsBlock}>
         <h3>My posts</h3>
