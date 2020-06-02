@@ -18,13 +18,6 @@ let state = {
             {id: 2, message: 'How are you ?'},
             {id: 3, message: 'What are you doing here?'}
         ],
-        userAvatars: [
-            {url: 'https://i.ibb.co/sv6Gsq8/1.png'},
-            {url: 'https://i.ibb.co/Jd8jnh1/2.png'},
-            {url: 'https://i.ibb.co/FVmqGCt/3.png'},
-            {url: 'https://i.ibb.co/0X0PNvD/4.png'},
-            {url: 'https://i.ibb.co/jVzWjLv/5.png'},
-        ]
     }
 }
 

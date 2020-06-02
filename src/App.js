@@ -7,11 +7,11 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
@@ -21,9 +21,12 @@ const App = (props) => {
                     <Route path='/News' render={News}/>
                     <Route path='/Music' render={Music}/>
                     <Route path='/Settings' render={Settings}/>
+{/*
+                    <Route path='/Friends' render={() => <Friends state={props.state.dialogsPage.dialogs}/>}/>
+*/}
+
                 </div>
             </div>
-        </BrowserRouter>
     );
 };
 
