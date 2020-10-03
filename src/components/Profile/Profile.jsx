@@ -2,12 +2,16 @@ import React from 'react';
 import c from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-function Profile(props) {
-    return <div>
-        <ProfileInfo/>
-        <MyPosts state={props.state.posts}/>
-    </div>
+const Profile = (props) => {
+
+    return (
+        <div>
+            <ProfileInfo/>
+            <MyPostsContainer store={props.store}/>
+        </div>
+    )
 }
 
 export default Profile;
