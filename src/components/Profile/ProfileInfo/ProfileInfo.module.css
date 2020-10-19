@@ -2,8 +2,9 @@
     display: grid;
     grid-template-areas:
             "b1 b2"
-            "b1 b3";
-    grid-template-rows: 1fr 1fr;
+            "b1 b3"
+            "b1 b4";
+    grid-template-rows: 50px 50px 1fr;
     grid-template-columns: 300px 1fr;
     grid-gap: 10px;
 }
@@ -19,4 +20,12 @@
 
 .Block3 {
     grid-area: b3;
+}
+.Block4 {
+    grid-area: b4;
+}
+img.Block4 {
+    width: 100px;
+    height: 60px;
+    padding-left: 10px;
 }
