@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
+
 .avaSize {
     height: 40px;
     width: 40px;

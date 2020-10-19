@@ -1,3 +1,22 @@
-.descriptionBlock {
-    padding: 5px;
+.profileBlock {
+    display: grid;
+    grid-template-areas:
+            "b1 b2"
+            "b1 b3";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+}
+
+.Block1 {
+    grid-area: b1;
+
+}
+
+.Block2 {
+    grid-area: b2;
+}
+
+.Block3 {
+    grid-area: b3;
 }

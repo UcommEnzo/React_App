@@ -36,7 +36,7 @@ class UsersAPIContainer extends React.Component {
     render() {
         return <>
             {this.props.isFetching ? <Preloader/> : null}
-                <Users totalUsersCount={this.props.totalUsersCount}
+            <Users totalUsersCount={this.props.totalUsersCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
                    onPostChanged={this.onPostChanged}
@@ -82,7 +82,8 @@ let mapStateToProps = (state) => {
 }*/
 
 const UsersContainer = connect(mapStateToProps, {
-    follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setToggleIsFetching})(UsersAPIContainer);
+    follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setToggleIsFetching
+})(UsersAPIContainer);
 
 
 export default UsersContainer;
