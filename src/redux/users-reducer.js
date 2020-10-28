@@ -86,7 +86,6 @@ export const getUsers = (currentPage, pageSize) => {
                 dispatch(setCurrentPage(currentPage));
                 dispatch(setToggleIsFetching(false));
             });
-
     }
 }
 
