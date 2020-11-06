@@ -5,9 +5,11 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import c from "./../Common/FormsControls/FormsControls.module.css"
 
 const LoginForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
+        {props.error && <div className={c.formSummaryError}> {props.error}</div>}
         <div>
             <Field name={"email"} component={Input} placeholder={"email"}
                    validate={required}/>
