@@ -2,16 +2,16 @@ import React from "react";
 import c from "./FormsControls.module.css";
 
 
-export const BaseForm = ({input, meta, ...props}) => {
+export const BaseForm = ({input, meta: {touched, error}, children}) => {
 
-    let hasError = meta.error && meta.touched;
+    let hasError = error && touched;
 
     return (
         <div className={c.formControl + " " + (hasError ? c.error : "")}>
             <div>
-                {props.children}
+                {children}
             </div>
-            {hasError && <span>{meta.error}</span>}
+            {hasError && <span>{error}</span>}
         </div>
     )
 }
