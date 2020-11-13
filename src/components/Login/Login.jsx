@@ -19,7 +19,7 @@ const LoginForm = ({handleSubmit, error}) => {
                    validate={required}/>
         </div>
         <div>
-            <Field name={"rememberMe"} component={Input} type={"checkbox"}/> remember me
+            <Field name={"rememberMe"} component={Input} type={"checkbox"}/>remember me
         </div>
         <div>
             <button>Login</button>

@@ -15,18 +15,3 @@
     color: orangered;
 }
 
-.item2 {
-    padding-top: 30px;
-    font-size: 24px;
-}
-
-.item2 a{
-    color: white;
-    text-decoration: none;
-}
-
-.item2 a.activeLink {
-    text-decoration: none;
-    color: orangered;
-}
-
