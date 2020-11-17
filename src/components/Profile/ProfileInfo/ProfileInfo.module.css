@@ -1,35 +1,45 @@
+.contacts {
+    padding-left: 10px;
+}
+
+/*
 .profileBlock {
     display: grid;
     grid-template-areas:
             "b1 b2"
             "b1 b3"
-            "b1 b4";
-    grid-template-rows: 50px 50px 1fr;
+            "b1 b4"
+            "bu b5";
+    grid-template-rows: 1fr 1fr 1fr 30px;
     grid-template-columns: 300px 1fr;
     grid-gap: 10px;
 }
 
 .Block1 {
     grid-area: b1;
-
 }
-
+.BlockUpload {
+    grid-area: bu;
+}
 .Block2 {
     grid-area: b2;
 }
-
 .Block3 {
     grid-area: b3;
 }
 .Block4 {
     grid-area: b4;
 }
-img.Block4 {
-    width: 100px;
-    height: 60px;
+.Block5 {
+    grid-area: b5;
+}
+.Block4 img{
+    width: 30px;
+    height: 30px;
     padding-left: 10px;
 }
 
 .grayText {
     color: gray;
 }
+*/
