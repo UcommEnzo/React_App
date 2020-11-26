@@ -5,9 +5,6 @@ import {Field, reduxForm} from "redux-form";
 
 const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return <form onSubmit={handleSubmit}>
-        {<div>
-            <button>save</button>
-        </div>}
         {error && <div className={c.formSummaryError}> {error}</div>}
         <div><b>Имя: </b>
             <Field name={"fullName"} component={Input} placeholder={"Имя"}/>
@@ -28,6 +25,9 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
             </div>
         })}
         </div>
+        {<div>
+            <button>save</button>
+        </div>}
     </form>
 }
 

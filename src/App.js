@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, withRouter} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -30,6 +30,7 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
+                    <Route path='/' render={() => <Redirect to={"/Profile"}/>}/>
                     <Route path='/Profile/:userId?' render={() => <ProfileContainer/>}/>
                     <Route path='/Dialogs' render={withSuspense(DialogsContainer)}/>
                     <Route path='/Users' render={withSuspense(UsersContainer)}/>

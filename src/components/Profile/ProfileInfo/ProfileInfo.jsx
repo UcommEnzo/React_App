@@ -23,37 +23,36 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
         })
     }
 
-    return <div>
-        <div className={c.profileBlock}>
+    return <div className={c.mainBlock}>
+        <div className={c.photoBlock}>
             <img className={c.Block1} src={profile.photos.large || userPhoto}/>
             {isOwner && <div className={c.BlockUpload}><input type={"file"} onChange={onMainPhotoSelected}/></div>}
+            <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
+        </div>
+        <div className={c.dataBlock}>
             {editMode
                 ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
                 : <ProfileData profile={profile} isOwner={isOwner}
                                goToEditMode={() => {
                                    setEditMode(true)
                                }}/>}
-            <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
         </div>
     </div>
 }
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return <div>
+        <div className={c.Block1}><b>Имя: </b>{profile.fullName}</div>
+        <div className={c.Block2}><b>Обо мне: </b>{profile.aboutMe}</div>
+        <div className={c.Block4}><b>Поиск работы: </b>{profile.lookingForAJob ? "да" : "нет"}</div>
+        {profile.lookingForAJob &&
+        <div className={c.Block5}><b>Подробнее: </b>{profile.lookingForAJobDescription}</div>}
+        <div className={c.contactsBlock}><b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
+            return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+        })}</div>
         {isOwner && <div>
             <button onClick={goToEditMode}>edit</button>
         </div>}
-        <div><b>Имя: </b>{profile.fullName}</div>
-        <div className={c.Block2}><b>Обо мне: </b>{profile.aboutMe ||
-        <span className={c.grayText}>нет информации</span>}</div>
-        <div className={c.Block4}><b>Поиск работы: </b>{profile.lookingForAJob ? "да" : "нет"}</div>
-        {profile.lookingForAJob &&
-        <div className={c.Block5}><b>Подробнее: </b>{profile.lookingForAJobDescription ||
-        <span className={c.grayText}>нет информации</span>}</div>
-        }
-        <div><b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
-            return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-        })}</div>
     </div>
 }
 

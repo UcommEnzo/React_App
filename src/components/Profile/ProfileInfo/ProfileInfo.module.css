@@ -1,8 +1,40 @@
+/*.contactsBlock {
+    display: grid;
+    grid-template-areas:
+            "cb cb cb cb"
+            "cb cb cb cb";
+
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+}*/
+
 .contacts {
-    padding-left: 10px;
+    grid-area: cb;
 }
 
-/*
+
+
+.mainBlock {
+    display: grid;
+    grid-template-areas:
+    "pb db";
+    grid-template-rows: 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+
+
+}
+.photoBlock {
+    grid-area: pb;
+}
+.dataBlock {
+    grid-area: db;
+}
+
+
+
 .profileBlock {
     display: grid;
     grid-template-areas:
@@ -42,4 +74,3 @@
 .grayText {
     color: gray;
 }
-*/
