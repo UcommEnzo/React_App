@@ -1,7 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import c from './ProfileStatus.module.css';
 
-const ProfileStatus = (props) => {
+type PropsType = {
+    status: string;
+    updateUserStatus: (status: string) => void;
+}
+
+const ProfileStatus: React.FC<PropsType> = (props) => {
 
     let [editMode, setEditMode] = useState(false);
     let [status, setStatus] = useState(props.status);
@@ -18,7 +23,7 @@ const ProfileStatus = (props) => {
         props.updateUserStatus(status)
     }
 
-    const onStatusChanged = (e) => {
+    const onStatusChanged = (e: ChangeEvent<HTMLInputElement>) => {
         setStatus(e.currentTarget.value)
     }
 
@@ -36,6 +41,5 @@ const ProfileStatus = (props) => {
             }
         </div>
     }
-
 
 export default ProfileStatus;
