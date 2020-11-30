@@ -1,0 +1,1 @@
+{"version":3,"sources":["Pagination.module.css","User.module.css"],"names":[],"mappings":"AAAA,gCACI,eACJ,CCFA,sBACI,UAAW,CACX,WACJ","file":"4.97960c86.chunk.css","sourcesContent":[".selectedPage {\r\n    font-weight: bold;\r\n}",".user img {\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n"]}
