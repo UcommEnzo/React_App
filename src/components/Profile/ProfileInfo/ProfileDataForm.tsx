@@ -1,9 +1,14 @@
 import React from 'react';
 import c from "../../Common/FormsControls/FormsControls.module.css"
 import {Input} from "../../Common/FormsControls/FormsControls";
-import {Field, reduxForm} from "redux-form";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
+import {ProfileType} from "../../../types/types";
 
-const ProfileDataForm = ({handleSubmit, profile, error}) => {
+type ProfileDataPropsType = {
+    profile: ProfileType
+}
+//InjectedFormProps<ProfileDataPropsType> & ProfileDataPropsType
+const ProfileDataForm: React.FC<any> = ({handleSubmit, profile, error}) => {
     return <form onSubmit={handleSubmit}>
         {error && <div className={c.formSummaryError}> {error}</div>}
         <div><b>Имя: </b>
@@ -18,13 +23,13 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
         <div><b>Подробнее:</b>
             <Field name={"lookingForAJobDescription"} component={Input} placeholder={"О поиске работы"}/>
         </div>
-        <div>
+        {/*<div>
             <b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
             return <div key={key} className={c.contacts}>
                 <b>{key}: <Field name={"contacts." + key} component={Input} placeholder={key}/></b>
             </div>
         })}
-        </div>
+        </div>*/}
         {<div>
             <button>save</button>
         </div>}

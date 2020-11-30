@@ -47,9 +47,9 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
         <div className={c.Block4}><b>Поиск работы: </b>{profile.lookingForAJob ? "да" : "нет"}</div>
         {profile.lookingForAJob &&
         <div className={c.Block5}><b>Подробнее: </b>{profile.lookingForAJobDescription}</div>}
-        <div className={c.contactsBlock}><b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
+        {/*<div className={c.contactsBlock}><b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
             return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-        })}</div>
+        })}</div>*/}
         {isOwner && <div>
             <button onClick={goToEditMode}>edit</button>
         </div>}
