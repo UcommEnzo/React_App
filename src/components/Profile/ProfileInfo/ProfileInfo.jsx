@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {Upload, message, Button} from 'antd';
+import {UploadOutlined} from '@ant-design/icons';
 import c from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
@@ -10,6 +12,22 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
 
     if (!profile)
         return <Preloader/>
+
+    const uploadProps = {
+        name: 'file',
+        action: savePhoto,
+
+        onChange(info) {
+            if (info.file.status !== 'uploading') {
+                console.log(info.file, info.fileList);
+            }
+            if (info.file.status === 'done') {
+                message.success(`${info.file.name} file uploaded successfully`);
+            } else if (info.file.status === 'error') {
+                message.error(`${info.file.name} file upload failed.`);
+            }
+        },
+    };
 
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
@@ -26,7 +44,13 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
     return <div className={c.mainBlock}>
         <div className={c.photoBlock}>
             <img className={c.Block1} src={profile.photos.large || userPhoto}/>
-            {isOwner && <div className={c.BlockUpload}><input type={"file"} onChange={onMainPhotoSelected}/></div>}
+            {isOwner &&
+            <div className={c.upload}>
+                <Upload {...uploadProps}>
+                    <Button icon={<UploadOutlined/>}>Загрузить фото</Button>
+                </Upload>
+            </div>
+            }
             <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
         </div>
         <div className={c.dataBlock}>

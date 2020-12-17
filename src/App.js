@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css'
 import 'antd/dist/antd.css';
 import {Layout, Menu} from 'antd';
-import {UploadOutlined, UserOutlined, VideoCameraOutlined} from '@ant-design/icons';
+import {UserOutlined, TeamOutlined, WechatOutlined} from '@ant-design/icons';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
+import {BrowserRouter, Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
@@ -49,10 +49,10 @@ class App extends React.Component {
                         <Menu.Item key="1" icon={<UserOutlined/>}>
                             <Link to="/Profile">Profile</Link>
                         </Menu.Item>
-                        <Menu.Item key="2" icon={<VideoCameraOutlined/>}>
+                        <Menu.Item key="2" icon={<WechatOutlined/>}>
                             <Link to="/Dialogs">Messages</Link>
                         </Menu.Item>
-                        <Menu.Item key="3" icon={<UploadOutlined/>}>
+                        <Menu.Item key="3" icon={<TeamOutlined />}>
                             <Link to="/Users">Users</Link>
                         </Menu.Item>
                     </Menu>
@@ -63,6 +63,7 @@ class App extends React.Component {
                         <div className="site-layout-background" style={{padding: 14, minHeight: 360}}>
                             <Switch>
                                 <Route exact path='/' render={() => <Redirect to={"/Profile"}/>}/>
+                                <Route exact path='/React_App' render={() => <Redirect to={"/Profile"}/>}/>
                                 <Route path='/Profile/:userId?' render={() => <ProfileContainer/>}/>
                                 <Route path='/Dialogs' render={withSuspense(DialogsContainer)}/>
                                 <Route path='/Users' render={withSuspense(UsersContainer)}/>

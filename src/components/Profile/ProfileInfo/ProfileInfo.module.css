@@ -74,3 +74,9 @@
 .grayText {
     color: gray;
 }
+
+.upload {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
