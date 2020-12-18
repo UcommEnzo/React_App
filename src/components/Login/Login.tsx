@@ -5,7 +5,8 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
-import c from "./../Common/FormsControls/FormsControls.module.css"
+//import c from "./../Common/FormsControls/FormsControls.module.css"
+import c from "./../../components/Login/Login.module.css"
 import {AppStateType} from "../../redux/redux-store";
 
 type LoginFormOwnProps = {
@@ -15,21 +16,24 @@ type LoginFormOwnProps = {
 const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, LoginFormOwnProps> & LoginFormOwnProps> = ({handleSubmit, error, captchaUrl}) => {
     return <form onSubmit={handleSubmit}>
         {error && <div className={c.formSummaryError}> {error}</div>}
-        <div>
-            <Field name={"email"} component={Input} placeholder={"email"}
-                   validate={required}/>
+        <div className={c.formGroup}>
+            <label className={c.formLabel}>Email</label>
+            <Field name={"email"} component={Input} validate={required} className={c.formInput}/>
+
         </div>
-        <div>
-            <Field name={"password"} component={Input} placeholder={"Password"} type={"password"}
-                   validate={required}/>
+        <div className={c.formGroup}>
+            <label className={c.formLabel}>Password</label>
+            <Field name={"password"} component={Input} type={"password"}
+                   validate={required} className={c.formInput}/>
         </div>
-        <div>
-            <Field name={"rememberMe"} component={Input} type={"checkbox"}/>remember me
+        <div className={c.checkRemember}>
+                <Field name={"rememberMe"} component={Input} type={"checkbox"} id={"rememberMe"}  className={c.remember}/>
+            <label className={c.label}>remember me</label>
         </div>
         {captchaUrl && <img src={captchaUrl} />}
         {captchaUrl && <Field name={"captcha"} validate={required} component={Input}/>}
         <div>
-            <button>Login</button>
+            <button className={c.formButton}>Login</button>
         </div>
     </form>
 }
@@ -60,9 +64,11 @@ const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
         return <Redirect to={"/profile"}/>
     }
 
-    return <div>
-        <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+    return <div className={c.body}>
+        <div className={c.form}>
+            <h1 className={c.formTitle}>Login</h1>
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+        </div>
     </div>
 }
 

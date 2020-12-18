@@ -1,0 +1,78 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.form {
+    width: 300px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
+    font-family: sans-serif;
+}
+.formTitle {
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+.formGroup {
+    margin-bottom: 16px;
+}
+.formLabel {
+    top: 0;
+    color: #9e9e9e;
+}
+.formInput {
+    width: 100%;
+    padding-bottom: 2px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s;
+}
+
+.formInput:focus {
+    border-bottom: 1px solid #1a73a8;
+}
+.formButton {
+    padding: 4px 16px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0071f0;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formButton:focus,
+.formButton:hover {
+    background-color: rgba(0, 113, 240, 0.7);
+}
+
+.checkRemember {
+    display: flex;
+    padding-bottom: 5px;
+}
+.remember {
+    vertical-align: middle;
+}
+.label {
+    padding-left: 2px;
+}
+
+
+.formControl.error input,
+.formControl.error textarea {
+    border: solid red 1px;
+}
+
+.formControl.error span {
+    color: red;
+}
+
+.formSummaryError {
+    color: red;
+}
