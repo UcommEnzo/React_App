@@ -9,18 +9,18 @@ type ProfileDataPropsType = {
 }
 //InjectedFormProps<ProfileDataPropsType> & ProfileDataPropsType
 const ProfileDataForm: React.FC<any> = ({handleSubmit, profile, error}) => {
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} className={c.profileBlock}>
         {error && <div className={c.formSummaryError}> {error}</div>}
-        <div><b>Имя: </b>
+        <div className={c.Block1}><b>Имя: </b>
             <Field name={"fullName"} component={Input} placeholder={"Имя"}/>
         </div>
-        <div><b>Обо мне: </b>
+        <div className={c.Block2}><b>Обо мне: </b>
             <Field name={"aboutMe"} component={Input} placeholder={"Обо мне"}/>
         </div>
-        <div><b>Поиск работы: </b>
+        <div className={c.Block4}><b>Поиск работы: </b>
             <Field name={"lookingForAJob"} component={Input} type={"checkbox"}/>
         </div>
-        <div><b>Подробнее:</b>
+        <div className={c.Block5}><b>Подробнее:</b>
             <Field name={"lookingForAJobDescription"} component={Input} placeholder={"О поиске работы"}/>
         </div>
         {/*<div>
@@ -30,7 +30,7 @@ const ProfileDataForm: React.FC<any> = ({handleSubmit, profile, error}) => {
             </div>
         })}
         </div>*/}
-        {<div>
+        {<div className={c.editButton}>
             <button>save</button>
         </div>}
     </form>

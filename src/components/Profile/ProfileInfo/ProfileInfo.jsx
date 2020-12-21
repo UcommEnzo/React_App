@@ -29,12 +29,6 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
         },
     };
 
-    const onMainPhotoSelected = (e) => {
-        if (e.target.files.length) {
-            savePhoto(e.target.files[0])
-        }
-    }
-
     const onSubmit = (formData) => {
         saveProfile(formData).then(() => {
             setEditMode(false)
@@ -43,7 +37,7 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
 
     return <div className={c.mainBlock}>
         <div className={c.photoBlock}>
-            <img className={c.Block1} src={profile.photos.large || userPhoto}/>
+            <img src={profile.photos.large || userPhoto}/>
             {isOwner &&
             <div className={c.upload}>
                 <Upload {...uploadProps}>
@@ -65,7 +59,7 @@ const ProfileInfo = ({profile, status, updateUserStatus, isOwner, savePhoto, sav
 }
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
-    return <div>
+    return <div className={c.profileBlock}>
         <div className={c.Block1}><b>Имя: </b>{profile.fullName}</div>
         <div className={c.Block2}><b>Обо мне: </b>{profile.aboutMe}</div>
         <div className={c.Block4}><b>Поиск работы: </b>{profile.lookingForAJob ? "да" : "нет"}</div>
@@ -74,7 +68,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
         {/*<div className={c.contactsBlock}><b>Контакты: </b> {Object.keys(profile.contacts).map(key => {
             return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
         })}</div>*/}
-        {isOwner && <div>
+        {isOwner && <div className={c.editButton}>
             <button onClick={goToEditMode}>edit</button>
         </div>}
     </div>

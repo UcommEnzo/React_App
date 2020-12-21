@@ -6,7 +6,7 @@ import {UserOutlined, TeamOutlined, WechatOutlined} from '@ant-design/icons';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {BrowserRouter, Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
+import {Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
@@ -29,7 +29,7 @@ class App extends React.Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Preloader/>
+            return <div><Preloader/></div>
         }
 
         return (

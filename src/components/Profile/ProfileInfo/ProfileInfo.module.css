@@ -14,8 +14,6 @@
     grid-area: cb;
 }
 
-
-
 .mainBlock {
     display: grid;
     grid-template-areas:
@@ -23,8 +21,6 @@
     grid-template-rows: 1fr;
     grid-template-columns: 300px 1fr;
     grid-gap: 10px;
-
-
 }
 .photoBlock {
     grid-area: pb;
@@ -33,42 +29,43 @@
     grid-area: db;
 }
 
-
-
 .profileBlock {
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #ccc;
     display: grid;
     grid-template-areas:
             "b1 b2"
-            "b1 b3"
-            "b1 b4"
-            "bu b5";
-    grid-template-rows: 1fr 1fr 1fr 30px;
-    grid-template-columns: 300px 1fr;
+            "b4 b5"
+            "eb eb";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    overflow: auto;
 }
 
 .Block1 {
     grid-area: b1;
-}
-.BlockUpload {
-    grid-area: bu;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 .Block2 {
     grid-area: b2;
-}
-.Block3 {
-    grid-area: b3;
+    padding-top: 5px;
 }
 .Block4 {
     grid-area: b4;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 .Block5 {
     grid-area: b5;
+    padding-top: 5px;
 }
-.Block4 img{
-    width: 30px;
-    height: 30px;
-    padding-left: 10px;
+.editButton {
+    grid-area: eb;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    align-items: center;
 }
 
 .grayText {
